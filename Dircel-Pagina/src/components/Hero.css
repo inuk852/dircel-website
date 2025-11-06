@@ -1,0 +1,233 @@
+/* ===== Layout general del hero con slider ===== */
+.hero-slider {
+  padding: 2.5rem 0;
+}
+
+.slider-layout {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/* ancho adaptable: imagen izquierda, texto a la derecha */
+.slider-area {
+  position: relative;
+  width: 55%; /* ajusta según diseño: 55% imagen, 45% texto */
+  max-width: 760px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* contenedor principal de la imagen (mantiene proporción del hero) */
+.slide-image {
+  position: relative;
+  width: 100%;
+  height: 320px; /* alto fijo para el hero: ajusta según tu diseño */
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.32s ease;
+}
+
+/* animación breve al cambiar slide */
+.slide-image.anim {
+  transform: scale(0.998);
+}
+
+/* la imagen cubre el contenedor sin deformar */
+.slide-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+  border-radius: 12px;
+}
+
+/* degradado hacia la derecha para que se funda con la zona del botón/texto */
+.image-gradient {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 35%; /* cuánto cubre el degradado sobre la imagen */
+  pointer-events: none;
+  border-radius: 0 12px 12px 0;
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(11,74,134,0.08) 40%, rgba(255,255,255,0.9) 100%);
+  mix-blend-mode: normal;
+}
+
+/* thumbnails debajo de la imagen */
+.thumbnails {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.thumb {
+  background: none;
+  border: 2px solid transparent;
+  padding: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 72px;
+  height: 48px;
+  cursor: pointer;
+  transition: border-color 0.18s ease, transform 0.12s ease;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.thumb:hover { transform: translateY(-4px); }
+.thumb.active { border-color: #0b4a86; }
+
+/* ===== Zona de texto y botón a la derecha ===== */
+.hero-text-area {
+  width: 40%;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.hero-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #071a2b;
+  line-height: 1.05;
+}
+
+.hero-sub {
+  margin: 0;
+  color: #25425f;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+/* botón elegante, plano y azul (sin sombra pesada) */
+.cta-button {
+  background: linear-gradient(180deg, #0b4a86 0%, #093d6f 100%);
+  color: #fff;
+  padding: 0.95rem 1.9rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: background 0.18s ease, transform 0.12s ease;
+  letter-spacing: 0.4px;
+  box-shadow: none;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+  background: linear-gradient(180deg, #093d6f 0%, #062b4f 100%);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* modal y formulario (puedes reusar los estilos que ya tenías) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 1.75rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 6px 18px rgba(12, 32, 63, 0.12);
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.modal-form input,
+.modal-form textarea {
+  width: 100%;
+  padding: 0.85rem;
+  border: 1px solid #e0e6ef;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fbfdff;
+  outline: none;
+}
+
+.send-btn {
+  background: #0b4a86;
+  color: #ffffff;
+  padding: 0.92rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.35px;
+  font-size: 1rem;
+  transition: background 0.18s ease, transform 0.12s ease;
+  box-shadow: none;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: #586069;
+  font-size: 0.95rem;
+  margin-top: 0.8rem;
+  cursor: pointer;
+}
+
+/* anim */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* responsive: coloca la imagen arriba en móviles */
+@media (max-width: 900px) {
+  .slider-layout {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .slider-area { width: 100%; }
+  .hero-text-area { width: 100%; align-items: center; text-align: center; }
+  .hero-text-area .hero-title { font-size: 1.25rem; }
+  .slide-image { height: 220px; }
+  .thumbnails { justify-content: center; }
+}
+
+/* responsive pequeño */
+@media (max-width: 480px) {
+  .slide-image { height: 180px; }
+  .thumb { width: 58px; height: 40px; }
+  .cta-button { padding: 0.8rem 1.2rem; font-size: 0.98rem; }
+}

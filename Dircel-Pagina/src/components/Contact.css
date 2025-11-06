@@ -1,0 +1,114 @@
+.contact {
+  background-color: #0f172a; /* azul marino profundo */
+  color: #f1f5f9; /* gris claro */
+  padding: 80px 20px;
+  font-family: "Merriweather", "Times New Roman", serif;
+}
+
+.contact .container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #e2e8f0;
+  position: relative;
+}
+
+.contact h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #c5a157; /* dorado elegante */
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.contact-form {
+  background-color: #1e293b;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-form h4 {
+  font-size: 1.3rem;
+  color: #c5a157;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: #0f172a;
+  border: 1px solid #334155;
+  color: #f8fafc;
+  font-size: 1rem;
+  padding: 12px 15px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #c5a157;
+  background-color: #1e293b;
+  box-shadow: 0 0 0 2px rgba(197, 161, 87, 0.3);
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-form button {
+  background-color: #c5a157;
+  color: #0f172a;
+  border: none;
+  font-weight: bold;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contact-form button:hover {
+  background-color: #d1b065;
+  transform: translateY(-2px);
+}
+
+.contact-form h5 {
+  margin-top: 20px;
+  font-size: 1rem;
+  color: #e2e8f0;
+}
+
+.contact-form p {
+  font-size: 0.95rem;
+  color: #94a3b8;
+  margin-top: 5px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .contact {
+    padding: 60px 15px;
+  }
+
+  .contact-form {
+    padding: 30px 20px;
+  }
+
+  .contact h2 {
+    font-size: 1.8rem;
+  }
+}

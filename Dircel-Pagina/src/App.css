@@ -1,0 +1,133 @@
+/* === Corrección de desbordamiento global === */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif; /* puedes usar otra fuente si prefieres */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* === Centrado general del contenido === */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;  /* centra horizontalmente */
+  padding: 0 1rem; /* deja un pequeño margen lateral */
+}
+
+/* Evita que se descuadre el hero o navbar */
+.hero, .navbar, .footer, section {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ===== FIX DE SUPERPOSICIÓN ENTRE HERO Y NAVBAR ===== */
+
+/* Asegura que el navbar siempre esté arriba */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(12, 44, 82, 0.98);
+  backdrop-filter: blur(5px);
+  color: white;
+  padding: 15px 20px;
+  z-index: 2000; /* subido para superar al hero y modal */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* El body debe dejar espacio suficiente debajo del navbar */
+body {
+  margin: 0;
+  padding-top: 85px;
+  overflow-x: hidden;
+  font-family: 'Georgia', serif;
+}
+
+/* El hero no debe interferir en el stacking context */
+.hero {
+  position: relative;
+  z-index: 1; /* por debajo del navbar */
+  background: linear-gradient(to bottom, #f4f7fb, #eaf1f9);
+  padding: 100px 20px; /* añade suficiente espacio superior */
+  text-align: center;
+  color: #0c2c52;
+  overflow: hidden;
+}
+
+/* Si tu animación de texto usa position absoluta, asegúrate de que quede bajo el navbar */
+.hero h2 {
+  position: relative;
+  overflow: hidden;
+  z-index: 1; /* debajo del navbar */
+}
+
+/* Y los spans que hacen la animación */
+.hero h2 span {
+  position: absolute;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: slideUp 4s ease-in-out infinite;
+  z-index: 1;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  font-family: 'Georgia', serif;
+}
+
+body {
+  padding-top: 85px; /* Espacio para el navbar */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(12, 44, 82, 0.98);
+  backdrop-filter: blur(6px);
+  color: white;
+  padding: 15px 20px;
+  z-index: 3000; /* MÁS alto que el hero y modal */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(to bottom, #f4f7fb, #eaf1f9);
+  padding: 100px 20px;
+  text-align: center;
+  color: #0c2c52;
+  overflow: hidden;
+}
+
+/* ===== MODAL ===== */
+.modal-overlay {
+  z-index: 2000; /* Debajo del navbar */
+}
+
+html {
+  scroll-behavior: smooth;
+}

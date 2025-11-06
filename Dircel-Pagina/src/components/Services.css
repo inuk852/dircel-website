@@ -1,0 +1,82 @@
+.services {
+  background-color: #f5f7fa;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.services-content h2 {
+  font-size: 2rem;
+  color: #002855;
+  margin-bottom: 3rem;
+}
+
+/* === CONTENEDOR PRINCIPAL === */
+.service-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: stretch; /* Alinea las tarjetas en altura */
+  gap: 2rem;
+}
+
+/* === TARJETAS === */
+.service-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 260px; /* Tamaño uniforme para alineación horizontal */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+}
+
+/* === IMÁGENES === */
+.service-image {
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* === TÍTULO === */
+.service-card h3 {
+  font-size: 1.2rem;
+  color: #002855;
+  margin: 1.2rem 0;
+}
+
+/* === BOTÓN === */
+.service-btn {
+  background-color: #ff7b00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 1.4rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.service-btn:hover {
+  background-color: #e86c00;
+}
+
+/* === RESPONSIVIDAD === */
+@media (max-width: 900px) {
+  .service-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-card {
+    width: 80%;
+  }
+}
