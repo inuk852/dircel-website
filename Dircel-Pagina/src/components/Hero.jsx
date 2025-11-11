@@ -48,12 +48,14 @@ function Hero() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const API_URL = import.meta.env.VITE_API_URL || "https://dircel-website.onrender.com";
+
   // Envía los datos al backend
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
-      const res = await fetch("https://dircel-website.onrender.com/send-email", {
+      const res = await fetch(`${API_URL}/send-email`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
