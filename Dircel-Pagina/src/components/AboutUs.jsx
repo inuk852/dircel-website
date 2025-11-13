@@ -16,7 +16,7 @@ function About() {
           <div className="about-text">
             <h3>Quiénes Somos</h3>
             <p>
-              En <strong>Dircel Abogados Asociados S.A.S</strong> somos una firma especializada en materia pensional, comprometida en defender los derechos de nuestros clientes frente al sistema de seguridad social. 
+              <strong>Dircel Abogados Asociados S.A.S</strong> somos una firma especializada en pensiones, comprometida en defender los derechos de nuestros clientes frente al sistema de seguridad social. 
               Brindamos asesoría integral en tramites de reconocimiento de pensiones, reliquidaciones, indemnizaciones substitutivas y/o devolución de saldo y demás temas relacionados con el régimen pensional publico y privado, garantizando soluciones jurídicas efectivas y personalizadas.
             </p>
           </div>
@@ -90,10 +90,10 @@ function About() {
                 className="team-photo"
                 style={{ backgroundImage: `url(${abogada2})` }}
               ></div>
-              <h4>Abis Marcela Garcia Ricardo</h4>
+              <h4>Abis Marcela García Ricardo</h4>
               <p className="team-role">Gerente general</p>
               <p>
-                Especialista y magister en derecho laboral y seguridad social y docente universitaria. Con amplia experiencia en derecho laboral, pensiones, asuntos de familia y asesoría a entes territoriales.
+                Abogada especialista y magíster en Derecho Laboral y Seguridad Social. Docente universitaria y consultora jurídica con amplia trayectoria en asesoría y representación en asuntos laborales, pensionales, de seguridad social y derecho de familia. Experiencia en acompañamiento jurídico a personas, empresas y entidades territoriales.
               </p>
             </div>
 

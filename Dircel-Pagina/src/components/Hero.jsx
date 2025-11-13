@@ -111,7 +111,7 @@ function Hero() {
         <div className="hero-text-area">
           <h2 className="hero-title">¿AÚN NO HA RECLAMADO SUS DERECHOS PENSIONALES?</h2>
           <p className="hero-sub">
-            EN DIRCEL ABOGADOS S.A.S. <br />
+            EN DIRCEL ABOGADOS ASOCIADOS S.A.S. <br />
             Te ayudamos a reclamarlo.
           </p>
 

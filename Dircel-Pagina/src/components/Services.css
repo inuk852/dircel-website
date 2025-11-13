@@ -4,19 +4,29 @@
   text-align: center;
 }
 
+/* --- CONTENEDOR PRINCIPAL DE SERVICIOS --- */
+.services-content {
+  display: flex;
+  flex-direction: column; /* 🔹 Coloca el título arriba y las tarjetas debajo */
+  align-items: center;
+  gap: 3rem; /* Espacio entre el título y las tarjetas */
+}
+
 .services-content h2 {
   font-size: 2rem;
   color: #002855;
-  margin-bottom: 3rem;
+  margin: 0; /* Eliminamos márgenes extra */
 }
 
-/* === CONTENEDOR PRINCIPAL === */
+/* === GRID DE TARJETAS === */
 .service-grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centra horizontalmente */
-  align-items: stretch; /* Alinea las tarjetas en altura */
+  justify-content: center;
+  align-items: stretch;
   gap: 2rem;
+  width: 100%;
+  max-width: 1200px; /* 🔹 Evita que se extiendan demasiado */
 }
 
 /* === TARJETAS === */
@@ -26,7 +36,7 @@
   overflow: hidden;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 260px; /* Tamaño uniforme para alineación horizontal */
+  width: 260px;
   display: flex;
   flex-direction: column;
   align-items: center;
