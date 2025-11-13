@@ -19,7 +19,7 @@ app.post("/send-email", async (req, res) => {
 
   try {
     await resend.emails.send({
-      from: "Contacto Dircel <onboarding@resend.dev>",
+      from: "Dircel Abogados <contacto@dircelabogados.com>",
       to: process.env.EMAIL_TO,
       subject: `Nuevo mensaje de ${name}`,
       html: `
