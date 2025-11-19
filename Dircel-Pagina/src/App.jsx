@@ -6,6 +6,7 @@ import About from './components/AboutUs.jsx'
 import Services from './components/Services.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
+import WhatsAppButton from "./components/WhatsAppButton";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Services />
       <Contact />
       <Footer />
+      <WhatsAppButton />
     </>
   )
 }

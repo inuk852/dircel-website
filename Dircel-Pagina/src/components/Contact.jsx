@@ -27,8 +27,12 @@ function Contact() {
 
   return (
     <section id="contacto" className="contact">
-      <div className="container">
-        <h2>Contáctanos</h2>
+    <div className="container">
+
+      <div className="content-grid">
+        
+        {/* 🟦 Formulario */}
+      <h2 className="contact-title">Contáctanos</h2>
         <form className="contact-form" onSubmit={handleSubmit}>
           <h4>AGENDA TU CITA</h4>
 
@@ -59,18 +63,26 @@ function Contact() {
           <button type="submit" disabled={loading}>
             {loading ? 'Enviando...' : 'Enviar mensaje'}
           </button>
+        </form>
 
+        {/* 🟩 Información de contacto */}
+        <div className="contact-info">
           <h5>Horario de atención:</h5>
           <p>Lunes a Viernes 9:00 a.m. a 4:00 p.m. Jornada continua</p>
+
           <h5>Dirección:</h5>
           <p>Carrera 42B #76-09, Local 4</p>
+
           <h5>Teléfonos:</h5>
           <p>📞 3117026584</p>
+
           <h5>Email:</h5>
           <p>dircelagobadosasociados@gmail.com</p>
-        </form>
+        </div>
+
       </div>
-    </section>
+    </div>
+  </section>
   );
 }
 
